@@ -21,7 +21,11 @@ We need to [wait for this issue](https://github.com/google/go-cloud/issues/2644)
 ## Nanos
 
 The code will create a `people` table in a database with a `Created`
-column that has nanosecond precision.
+column that has microsecond precision.
+
+Notice that we cannot have nanosecond precision, as there is no
+database I know of that supports nanosecond precision. However,
+the Go `time.Time` has nanosecond precision. So there might be dragons.
 
 # License
 
